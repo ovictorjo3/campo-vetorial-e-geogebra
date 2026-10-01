@@ -1,16 +1,23 @@
-Componentes escalares do campo 
+Componentes escalares do campo F(x,y) = (-y, x) 
 P(x, y) = -y 
 Q(x, y) = x 
 
-Gerar a malha de vetores no plano (Grid) 
-grid = Sequence(Sequence(Vector((i, j), (i, j) + 0.2 (P(i, j), Q(i, j))), i, -3, 3, 1), j, -3, 3, 1)
+%VectorField(-y, x)
 
-Trajetória parametrizada e ponto animado 
+Gerar a malha de vetores no plano (Grid 7x7) 
+grid = Sequence(Sequence(Vector((i, j), (i, j) + 0.2 (P(i, j), Q(i, j))), i, -3, 3, 1), j, -3, 3, 1) 
+
+Trajetória parametrizada (Circunferência unitária) 
 C = Curve(cos(t), sin(t), t, 0, 2pi) 
+
+Ponto móvel sobre a curva (pode ser animado) 
 A = Point(C, 0.2) 
 
-Vetor do campo atuando sobre o ponto A 
-v_field = Vector(A, A + 0.3 (P(x(A), y(A)), Q(x(A), y(A)))) 
+Vetor do campo atuando exatamente sobre o ponto A 
+v\_field = Vector(A, A + 0.3 (P(x(A), y(A)), Q(x(A), y(A)))) 
 
-Vetor tangente unitário à curva no ponto A 
-v_tangent = TangentVector(A, C)
+Reta Tangente no ponto A 
+t\_line = Tangent(A, C) 
+
+Vetor Tangente Unitário ancorado no ponto A 
+v\_tangent = Vector(A, A + UnitVector(Direction(t\_line)))

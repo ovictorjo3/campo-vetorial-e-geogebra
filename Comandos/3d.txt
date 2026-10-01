@@ -1,0 +1,12 @@
+Definir a hélice tridimensional 
+Helix = Curve(cos(t), sin(t), t, t, 0, 2pi) 
+
+Componentes escalares do campo 3D F(x,y,z) = (-y, x, 1) 
+
+P3(x, y, z) = -y 
+Q3(x, y, z) = x 
+R3(x, y, z) = 1 
+
+Acoplar a sequência de vetores ao longo da hélice no espaço 
+
+vectors3D = Sequence(Vector(Helix(t), Helix(t) + 0.3 (P3(x(Helix(t)), y(Helix(t)), z(Helix(t))), Q3(x(Helix(t)), y(Helix(t)), z(Helix(t))), R3(x(Helix(t)), y(Helix(t)), z(Helix(t))))), t, 0, 2pi, pi/4)
