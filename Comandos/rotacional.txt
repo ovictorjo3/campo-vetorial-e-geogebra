@@ -1,0 +1,16 @@
+Componentes escalares do campo 
+P(x, y) = -y 
+Q(x, y) = x 
+
+Gerar a malha de vetores no plano (Grid) 
+grid = Sequence(Sequence(Vector((i, j), (i, j) + 0.2 (P(i, j), Q(i, j))), i, -3, 3, 1), j, -3, 3, 1)
+
+Trajetória parametrizada e ponto animado 
+C = Curve(cos(t), sin(t), t, 0, 2pi) 
+A = Point(C, 0.2) 
+
+Vetor do campo atuando sobre o ponto A 
+v_field = Vector(A, A + 0.3 (P(x(A), y(A)), Q(x(A), y(A)))) 
+
+Vetor tangente unitário à curva no ponto A 
+v_tangent = TangentVector(A, C)

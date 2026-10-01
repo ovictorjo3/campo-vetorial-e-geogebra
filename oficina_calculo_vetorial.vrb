@@ -1,0 +1,14 @@
+\frametitle{GeoGebra: Curvas de Nível e Gradiente}
+\begin{block}{Comandos no GeoGebra}
+			\begin{lstlisting}
+				f(x, y) = x^2 y - y^3
+				levels = ContourPlot(f, -4, 4, 0.5)
+				GradX(x, y) = 2 x y
+				GradY(x, y) = x^2 - 3 y^2
+				gradGrid = Sequence(Sequence(Vector((i, j), (i, j) + 0.15 (GradX(i, j), GradY(i, j))), i, -3, 3, 1), j, -3, 3, 1)
+			\end{lstlisting}
+		\end{block}
+		
+		\begin{exampleblock}{Exploração Visual em Sala}
+			Ao projetar essa construção, a turma verifica imediatamente que os vetores do gradiente cortam as linhas de nível em ângulos de $90^\circ$.
+		\end{exampleblock}
